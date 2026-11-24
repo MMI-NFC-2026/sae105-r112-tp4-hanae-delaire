@@ -39,12 +39,17 @@ details > div {
   overflow: hidden;
 }
 
+details::details-content {
+  transition: content-visibility 2s ease-in-out allow-discrete;
+}
+
 details[open] {
   width: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  details {
+  details,
+  details::details-content {
     transition-duration: 0.01ms;
   }
 }
